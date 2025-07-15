@@ -27,7 +27,11 @@ function App() {
         <ul className="product-list">
           {products.map((p) => (
             <li key={p.id} className="product-item">
-              <img src={p.image} alt={p.name} className="product-img" />
+              <img
+                src={p.image && p.image.startsWith('/static') ? `http://localhost:8000${p.image}` : p.image}
+                alt={p.name}
+                className="product-img"
+              />
               <div className="product-info">
                 <strong>{p.name}</strong>
                 <div className="desc">{p.description}</div>
