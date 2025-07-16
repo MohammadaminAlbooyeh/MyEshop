@@ -29,7 +29,7 @@ function Home() {
     {
       name: 'Accessories',
       link: '/accessories',
-      img: '/static/placeholder.txt', // Replace with real image if available
+      img: '/static/accessories.png',
     },
   ];
 
@@ -39,7 +39,7 @@ function Home() {
         <h1 style={{ fontSize: 48, color: '#3490fa', fontWeight: 700, marginBottom: 0, letterSpacing: 1 }}>
           MyEShop
         </h1>
-        <nav style={{ margin: '24px 0 32px 0', fontSize: 22 }}>
+        <nav style={{ margin: '24px 0 32px 0', fontSize: 16 }}>
           <Link to="/" style={{ color: '#3490fa', textDecoration: 'none', margin: '0 18px', fontWeight: 500 }}>Home</Link>
           <Link to="/ipad" style={{ color: '#3490fa', textDecoration: 'none', margin: '0 18px', fontWeight: 500 }}>ipad</Link>
           <Link to="/iphone" style={{ color: '#3490fa', textDecoration: 'none', margin: '0 18px', fontWeight: 500 }}>iphone</Link>
