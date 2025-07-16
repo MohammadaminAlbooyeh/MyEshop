@@ -1,7 +1,13 @@
+
 import { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Ipad from './Ipad.jsx';
+import Iphone from './Iphone.jsx';
+import Macbook from './Macbook.jsx';
 import './App.css';
 
-function App() {
+
+function Home() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -17,6 +23,12 @@ function App() {
   return (
     <div className="eshop-container">
       <h1>myEShop 🛒</h1>
+      <nav style={{ marginBottom: 20 }}>
+        <Link to="/">Home</Link> |{' '}
+        <Link to="/ipad">iPad</Link> |{' '}
+        <Link to="/iphone">iPhone</Link> |{' '}
+        <Link to="/macbook">Macbook</Link>
+      </nav>
       <h2>Product List</h2>
       {loading ? (
         <p>Loading...</p>
@@ -40,6 +52,19 @@ function App() {
         </ul>
       )}
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/ipad" element={<Ipad />} />
+        <Route path="/iphone" element={<Iphone />} />
+        <Route path="/macbook" element={<Macbook />} />
+      </Routes>
+    </Router>
   );
 }
 
