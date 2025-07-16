@@ -51,7 +51,7 @@ app = FastAPI()
 
 # Serve static files
 from fastapi.staticfiles import StaticFiles
-app.mount("/static", StaticFiles(directory="backend/static"), name="static")
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 
 app.add_middleware(
