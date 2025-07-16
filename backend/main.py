@@ -26,18 +26,18 @@ def seed_products():
     if db.query(Product).count() == 0:
         demo_products = [
             Product(
-                name="iPad Pro",
-                description="Apple tablet with Liquid Retina display and M2 chip",
+                name="iPad",
+                description="",
                 image="/static/ipad.png"
             ),
             Product(
-                name="iPhone 15 Pro",
-                description="Apple smartphone with Pro camera and A17 Pro chip",
+                name="iPhone",
+                description="",
                 image="/static/iphone.png"
             ),
             Product(
-                name="MacBook Air M3",
-                description="Ultra-light Apple laptop with M3 chip and Retina display",
+                name="MacBook",
+                description="",
                 image="/static/laptop.png"
             ),
         ]
