@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy import create_engine, Column, Integer, String
 from sqlalchemy.orm import declarative_base
 from sqlalchemy.orm import sessionmaker
+import sqlite3
 
 DATABASE_URL = "sqlite:///./myeshop.db"
 
