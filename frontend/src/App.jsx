@@ -4,53 +4,79 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Ipad from './Ipad.jsx';
 import Iphone from './Iphone.jsx';
 import Macbook from './Macbook.jsx';
+// Placeholder for Accessories page/component if needed
 import './App.css';
 
 
 function Home() {
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetch('http://localhost:8000/products')
-      .then((res) => res.json())
-      .then((data) => {
-        setProducts(data);
-        setLoading(false);
-      });
-  }, []);
+  // Category data for Home page
+  const categories = [
+    {
+      name: 'iPad',
+      link: '/ipad',
+      img: '/static/ipad.png',
+    },
+    {
+      name: 'iPhone',
+      link: '/iphone',
+      img: '/static/iphone.png',
+    },
+    {
+      name: 'Macbook',
+      link: '/macbook',
+      img: '/static/laptop.png',
+    },
+    {
+      name: 'Accessories',
+      link: '/accessories',
+      img: '/static/placeholder.txt', // Replace with real image if available
+    },
+  ];
 
   return (
-    <div className="eshop-container">
-      <h1>myEShop 🛒</h1>
-      <nav style={{ marginBottom: 20 }}>
-        <Link to="/">Home</Link> |{' '}
-        <Link to="/ipad">iPad</Link> |{' '}
-        <Link to="/iphone">iPhone</Link> |{' '}
-        <Link to="/macbook">Macbook</Link>
-      </nav>
-      <h2>Product List</h2>
-      {loading ? (
-        <p>Loading...</p>
-      ) : products.length === 0 ? (
-        <p>No products found.</p>
-      ) : (
-        <ul className="product-list">
-          {products.map((p) => (
-            <li key={p.id} className="product-item">
-              <img
-                src={p.image && p.image.startsWith('/static') ? `http://localhost:8000${p.image}` : p.image}
-                alt={p.name}
-                className="product-img"
-              />
-              <div className="product-info">
-                <strong>{p.name}</strong>
-                <div className="desc">{p.description}</div>
+    <div style={{ minHeight: '100vh', background: '#fff', padding: 0, margin: 0 }}>
+      <header style={{ textAlign: 'center', paddingTop: 40 }}>
+        <h1 style={{ fontSize: 48, color: '#3490fa', fontWeight: 700, marginBottom: 0, letterSpacing: 1 }}>
+          MyEShop
+        </h1>
+        <nav style={{ margin: '24px 0 32px 0', fontSize: 22 }}>
+          <Link to="/" style={{ color: '#3490fa', textDecoration: 'none', margin: '0 18px', fontWeight: 500 }}>Home</Link>
+          <Link to="/ipad" style={{ color: '#3490fa', textDecoration: 'none', margin: '0 18px', fontWeight: 500 }}>ipad</Link>
+          <Link to="/iphone" style={{ color: '#3490fa', textDecoration: 'none', margin: '0 18px', fontWeight: 500 }}>iphone</Link>
+          <Link to="/macbook" style={{ color: '#3490fa', textDecoration: 'none', margin: '0 18px', fontWeight: 500 }}>Macbook</Link>
+          <Link to="/accessories" style={{ color: '#3490fa', textDecoration: 'none', margin: '0 18px', fontWeight: 500 }}>Accessories</Link>
+        </nav>
+      </header>
+      <main style={{ maxWidth: 900, margin: '0 auto', padding: '0 16px' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: 32, marginTop: 40, flexWrap: 'wrap' }}>
+          {categories.map((cat) => (
+            <Link key={cat.name} to={cat.link} style={{ textDecoration: 'none' }}>
+              <div style={{
+                width: 180,
+                height: 180,
+                background: '#f7f8fa',
+                borderRadius: 18,
+                boxShadow: '0 2px 12px #0001',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginBottom: 24,
+                transition: 'box-shadow 0.2s',
+                cursor: 'pointer',
+              }}>
+                <img
+                  src={cat.img}
+                  alt={cat.name}
+                  style={{ width: 80, height: 80, objectFit: 'contain', marginBottom: 16 }}
+                  onError={e => { e.target.style.display = 'none'; }}
+                />
+                <span style={{ fontSize: 22, color: '#222', fontWeight: 600 }}>{cat.name}</span>
               </div>
-            </li>
+            </Link>
           ))}
-        </ul>
-      )}
+        </div>
+      </main>
     </div>
   );
 }
@@ -63,6 +89,7 @@ function App() {
         <Route path="/ipad" element={<Ipad />} />
         <Route path="/iphone" element={<Iphone />} />
         <Route path="/macbook" element={<Macbook />} />
+        {/* Accessories page can be added here if needed */}
       </Routes>
     </Router>
   );
