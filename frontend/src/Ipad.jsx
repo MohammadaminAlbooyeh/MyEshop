@@ -10,7 +10,21 @@ export default function Ipad() {
         <Link to="/macbook" style={{ color: '#3490fa', textDecoration: 'none', margin: '0 18px', fontWeight: 500 }}>Macbook</Link>
         <Link to="/accessories" style={{ color: '#3490fa', textDecoration: 'none', margin: '0 18px', fontWeight: 500 }}>Accessories</Link>
       </nav>
-      <img src="/static/ipad.png" alt="iPad" style={{ width: "300px", height: "auto", marginTop: "20px" }} />
+      <img src="/static/ipad.png" alt="iPad" style={{ width: "180px", height: "auto", marginTop: "20px" }} />
+      <p style={{ marginTop: 18, fontSize: 18, color: '#444', textAlign: 'center', maxWidth: 400 }}>
+        Apple iPad (2025) specifications:
+        <ul style={{ textAlign: 'left', margin: '16px auto', maxWidth: 350, fontSize: 16, color: '#444' }}>
+          <li>Apple M4 chip for fast performance and efficiency</li>
+          <li>12.9-inch Liquid Retina XDR display</li>
+          <li>Up to 16GB RAM</li>
+          <li>Up to 2TB SSD storage</li>
+          <li>Wi-Fi 6E and 5G connectivity</li>
+          <li>Apple Pencil Pro support</li>
+          <li>Ultra-wide 12MP front camera</li>
+          <li>Long battery life (up to 12 hours)</li>
+          <li>iPadOS 19</li>
+        </ul>
+      </p>
     </div>
   );
 }
