@@ -10,7 +10,7 @@ export default function Ipad() {
         <Link to="/macbook" style={{ color: '#3490fa', textDecoration: 'none', margin: '0 18px', fontWeight: 500 }}>Macbook</Link>
         <Link to="/accessories" style={{ color: '#3490fa', textDecoration: 'none', margin: '0 18px', fontWeight: 500 }}>Accessories</Link>
       </nav>
-      <img src="/static/laptop.png" alt="iPad" style={{ width: "300px", height: "auto", marginTop: "20px" }} />
+      <img src="/static/accessories.png" alt="iPad" style={{ width: "300px", height: "auto", marginTop: "20px" }} />
     </div>
   );
 }
