@@ -1,0 +1,5 @@
+# Add your backend Python dependencies here
+fastapi
+uvicorn
+sqlalchemy
+databases
