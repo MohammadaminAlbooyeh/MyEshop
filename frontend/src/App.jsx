@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Ipad from './Ipad.jsx';
 import Iphone from './Iphone.jsx';
 import Macbook from './Macbook.jsx';
-// Placeholder for Accessories page/component if needed
+import Accessories from './Accessories.jsx';
 import './App.css';
 
 
@@ -89,7 +89,7 @@ function App() {
         <Route path="/ipad" element={<Ipad />} />
         <Route path="/iphone" element={<Iphone />} />
         <Route path="/macbook" element={<Macbook />} />
-        {/* Accessories page can be added here if needed */}
+        <Route path="/accessories" element={<Accessories />} />
       </Routes>
     </Router>
   );
